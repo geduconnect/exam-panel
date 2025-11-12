@@ -240,3 +240,176 @@ td {
   border: none;
   border-radius: 4px;
 }
+/* examAdmin.css — Modern Academic (Light Mode) theme */
+
+:root {
+  --primary: #2563eb; /* soft academic blue */
+  --primary-light: #eff6ff;
+  --primary-dark: #1e40af;
+  --text-main: #1e293b;
+  --text-muted: #64748b;
+  --bg-main: #f8fafc;
+  --bg-card: #ffffff;
+  --border-light: #e2e8f0;
+  --radius: 16px;
+  --shadow: 0 1px 4px rgba(0, 0, 0, 0.06);
+  --transition: all 0.2s ease;
+}
+
+body {
+  background-color: var(--bg-main);
+  color: var(--text-main);
+  font-family: 'Inter', 'Segoe UI', Roboto, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+/* Utility buttons */
+.btn {
+  background-color: var(--primary);
+  color: white;
+  font-weight: 500;
+  padding: 8px 14px;
+  border-radius: 10px;
+  border: none;
+  cursor: pointer;
+  transition: var(--transition);
+}
+
+.btn:hover {
+  background-color: var(--primary-dark);
+}
+
+.btn-ghost {
+  background-color: transparent;
+  color: var(--primary);
+  border: 1px solid var(--primary);
+  padding: 7px 13px;
+  border-radius: 10px;
+  transition: var(--transition);
+}
+
+.btn-ghost:hover {
+  background-color: var(--primary-light);
+}
+
+.btn-danger {
+  background-color: #ef4444;
+  color: white;
+  border: none;
+  border-radius: 10px;
+  padding: 7px 13px;
+  transition: var(--transition);
+}
+
+.btn-danger:hover {
+  background-color: #dc2626;
+}
+
+/* Input styling */
+.input {
+  width: 100%;
+  border: 1px solid var(--border-light);
+  padding: 8px 10px;
+  border-radius: 10px;
+  transition: var(--transition);
+}
+
+.input:focus {
+  border-color: var(--primary);
+  outline: none;
+  box-shadow: 0 0 0 2px var(--primary-light);
+}
+
+/* Cards */
+.card {
+  background: var(--bg-card);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  padding: 16px;
+  transition: var(--transition);
+}
+
+.card:hover {
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.08);
+}
+
+/* Tables */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 14px;
+}
+
+th, td {
+  padding: 10px 12px;
+  border-bottom: 1px solid var(--border-light);
+}
+
+th {
+  text-align: left;
+  color: var(--text-muted);
+  background-color: var(--primary-light);
+  font-weight: 600;
+}
+
+tr:hover td {
+  background-color: #f1f5f9;
+}
+
+/* Headers */
+h1, h2, h3 {
+  color: var(--text-main);
+}
+
+h1 {
+  font-size: 1.75rem;
+  font-weight: 700;
+}
+
+h3 {
+  font-size: 1.1rem;
+  font-weight: 600;
+}
+
+/* Layout helpers */
+.dashboard-container {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 24px;
+}
+
+.grid-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 16px;
+}
+
+.text-muted {
+  color: var(--text-muted);
+}
+
+/* Footer */
+footer {
+  text-align: center;
+  color: var(--text-muted);
+  font-size: 13px;
+  padding-top: 20px;
+}
+
+/* Hover elevation */
+.card-hover:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Smooth fade-in */
+.fade-in {
+  opacity: 0;
+  animation: fadeIn 0.4s ease forwards;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}

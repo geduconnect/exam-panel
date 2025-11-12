@@ -29,8 +29,8 @@ import Sidebar from "./components/Sidebar";
 import BalancedTestReport from "./pages/AdminTestReport";
 import AdminTestOverview from "./pages/AdminTestOverview";
 import AdminTestSummary from "./pages/AdminTestSummary";
-import AdminReportsList from "./pages/AdminReportsList";
-import AdminReportDetail from "./pages/AdminReportDetail";
+import ExamAdminDashboard from "./pages/ExamAdminDashboard";
+
 
 // ✅ Wrapper for dynamic test report route
 function AdminTestReportWrapper() {
@@ -104,7 +104,8 @@ export default function App() {
             {/* Legacy or General Report */}
             <Route path="/balancedtests/report/:id" element={<BalancedTestReport />} />
             <Route path="/admin/test-overview" element={<AdminTestOverview />} />
-           <Route path="/admin/test-summary/:test_id" element={<AdminTestSummary />} />
+            <Route path="/admin/test-summary/:test_id" element={<AdminTestSummary />} />
+            <Route path="/admin-dashboard" element={<ExamAdminDashboard />} />
 
 
           </Routes>

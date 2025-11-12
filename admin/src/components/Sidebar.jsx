@@ -25,6 +25,7 @@ export default function Sidebar({ isOpen, toggleSidebar }) {
       {/* Sidebar Container */}
       <div className={`sidebar ${isOpen ? "open" : "collapsed"}`}>
 
+        <Link to="/admin-dashboard">Admin Dashboard</Link>
         {/* Hierarchy Manager */}
         <div>
           <div
