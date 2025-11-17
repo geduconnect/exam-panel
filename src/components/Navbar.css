@@ -1,0 +1,297 @@
+/* ================================
+   MODERN NAVBAR (Dashboard Style)
+   ================================ */
+
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 64px;
+  background: #1e293b; /* Slate blue-gray */
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 22px;
+  z-index: 100;
+  border-bottom: 1px solid rgba(255,255,255,0.08);
+  box-shadow: 0 2px 10px rgba(0,0,0,0.20);
+}
+
+/* Left Area */
+.navbar-left {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.navbar-menu-btn {
+  background: none;
+  border: none;
+  color: white;
+  padding: 8px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all .25s ease;
+}
+
+.navbar-menu-btn:hover {
+  background: rgba(255,255,255,0.12);
+}
+
+/* Brand / Title */
+.navbar-title {
+  font-size: 22px;
+  font-weight: 700;
+  cursor: pointer;
+  letter-spacing: 0.5px;
+  user-select: none;
+  transition: opacity .2s;
+}
+
+.navbar-title:hover {
+  opacity: 0.85;
+}
+
+/* Right Area */
+.navbar-right {
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+
+/* Profile Button */
+.profile-btn {
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  background: #475569;
+  border: 2px solid rgba(255,255,255,0.35);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all .25s ease;
+}
+
+.profile-btn:hover {
+  background-color: #64748b;
+  transform: scale(1.07);
+}
+
+/* Profile Dropdown — FIXED to stay inside screen */
+.profile-dropdown {
+  position: absolute;
+  right: 10px;            /* <-- PUSH INSIDE */
+  top: 58px;
+  background: white;
+  color: #1e293b;
+  border-radius: 10px;
+  padding: 6px 0;
+  min-width: 180px;
+  overflow: hidden;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+  animation: fadeSlide .22s ease;
+  z-index: 200;
+
+  /* Prevent overflow */
+  max-width: calc(100vw - 20px);
+}
+
+@keyframes fadeSlide {
+  from {
+    opacity: 0;
+    transform: translateY(-5px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.profile-dropdown button {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  width: 100%;
+  padding: 12px 18px;
+  background: none;
+  border: none;
+  font-size: 15px;
+  color: #1e293b;
+  cursor: pointer;
+  transition: background 0.18s ease;
+}
+
+.profile-dropdown button:hover {
+  background: #f1f5f9;
+}
+
+/* Logout */
+.profile-dropdown button.logout {
+  color: #dc2626;
+}
+
+.profile-dropdown button.logout:hover {
+  background: #fee2e2;
+}
+
+/* Mobile Responsive */
+@media (max-width: 768px) {
+  .navbar {
+    padding: 0 15px;
+  }
+
+  .navbar-title {
+    font-size: 18px;
+  }
+
+  .profile-btn {
+    width: 36px;
+    height: 36px;
+  }
+}
+
+/* ================================
+   SIDEBAR - Collapsible Design
+   ================================ */
+
+.sidebar {
+  width: 250px;
+  height: 100%;
+  background-color: #1e293b;
+  color: #ffffff;
+  padding: 20px;
+  position: fixed;
+  top: 60px; 
+  left: 0;
+  overflow-y: auto;
+  transition: width 0.3s ease, transform 0.3s ease;
+  z-index: 90;
+}
+
+/* COLLAPSED VIEW */
+.sidebar.collapsed {
+  width: 70px;
+  padding-left: 12px;
+  padding-right: 12px;
+}
+
+/* Sidebar links with icons */
+.sidebar-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 8px 0;
+  color: #ffffff;
+  text-decoration: none;
+  font-size: 15px;
+  transition: color 0.2s ease, transform 0.2s ease;
+}
+
+.sidebar-item:hover {
+  color: #dbeafe;
+  transform: translateX(2px);
+}
+
+/* COLLAPSED hides text */
+.sidebar.collapsed .sidebar-item span {
+  display: none;
+}
+
+/* Section Header (with icons) */
+.sidebar-section-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-weight: 500;
+  cursor: pointer;
+  padding: 8px 0;
+  transition: color 0.2s ease;
+}
+
+.sidebar-section-header:hover {
+  color: #dbeafe;
+}
+
+.sidebar-icon-text {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+/* Hide section text in collapsed mode */
+.sidebar.collapsed .sidebar-icon-text span {
+  display: none;
+}
+
+/* Submenu Styling */
+.sidebar-submenu {
+  list-style: none;
+  padding-left: 18px;
+  margin: 8px 0 12px;
+  border-left: 2px solid rgba(255, 255, 255, 0.2);
+}
+
+.sidebar-submenu li {
+  margin-bottom: 8px;
+}
+
+.sidebar-submenu a {
+  display: block;
+  font-size: 14px;
+  padding: 4px 0;
+  text-decoration: none;
+  color: #e5e7eb;
+  transition: color 0.2s ease;
+}
+
+.sidebar-submenu a:hover {
+  color: #ffffff;
+}
+
+/* When collapsed, completely hide submenu */
+.sidebar.collapsed .sidebar-submenu {
+  display: none;
+}
+
+/* Divider */
+.sidebar-divider {
+  margin: 20px 0;
+  border-color: #5468ad;
+}
+
+/* Mobile Toggle Button */
+.sidebar-toggle {
+  display: none;
+  position: fixed;
+  top: 15px;
+  left: 15px;
+  background: #4a65a0;
+  border: none;
+  color: #fff;
+  padding: 6px 10px;
+  border-radius: 6px;
+  cursor: pointer;
+  z-index: 100;
+}
+
+.sidebar-toggle:hover {
+  background-color: #5a78d1;
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 992px) {
+  .sidebar {
+    transform: translateX(-100%);
+  }
+
+  .sidebar.open {
+    transform: translateX(0);
+  }
+
+  .sidebar-toggle {
+    display: block;
+  }
+}

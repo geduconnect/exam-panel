@@ -1,0 +1,341 @@
+/* ===========================
+   LOGIN PAGE
+   =========================== */
+
+.login-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  background-color: #a6b8dd;
+  font-family: Arial, sans-serif;
+}
+
+.login-container h1 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  font-weight: bold;
+  color: #333;
+}
+
+.login-form {
+  background-color: #fff;
+  padding: 2rem;
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  width: 320px;
+  display: flex;
+  flex-direction: column;
+}
+
+.login-form input {
+  padding: 10px;
+  margin-bottom: 12px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 1rem;
+}
+
+.login-form input:focus {
+  border-color: #3b82f6;
+  outline: none;
+  box-shadow: 0 0 5px rgba(59, 130, 246, 0.3);
+}
+
+.login-form button {
+  background-color: #3b82f6;
+  color: #fff;
+  padding: 10px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.login-form button:hover {
+  background-color: #2563eb;
+}
+
+.login-form .error {
+  color: #dc2626;
+  margin-bottom: 10px;
+  font-size: 0.9rem;
+}
+
+
+/* ===========================
+   ADMIN CONTAINER
+   =========================== */
+
+.admin-container {
+  padding: 24px;
+  min-height: 100vh;
+  background-color: #f5f7fa;
+  font-family: Arial, sans-serif;
+}
+
+.admin-container .title {
+  font-size: 1.75rem;
+  font-weight: bold;
+  margin-bottom: 16px;
+  text-align: center;
+  color: #111827;
+}
+
+
+/* ===========================
+   TABLES (Student, CRUD, Category, Generic)
+   =========================== */
+
+.student-table,
+.crud-table,
+.table {
+  width: 100%;
+  border-collapse: collapse;
+  background-color: #ffffff;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.student-table th,
+.student-table td,
+.crud-table th,
+.crud-table td,
+.table th,
+.table td {
+  padding: 12px 16px;
+  text-align: left;
+  border-bottom: 1px solid #e5e7eb;
+  font-size: 0.95rem;
+}
+
+.student-table thead,
+.crud-table thead,
+.table thead {
+  background-color: #e5e7eb;
+}
+
+.student-table tr:nth-child(even),
+.crud-table tr:nth-child(even),
+.table tr:nth-child(even) {
+  background-color: #f3f4f6;
+}
+
+.student-table tr:hover,
+.crud-table tr:hover,
+.table tr:hover {
+  background-color: #dbeafe;
+}
+
+
+/* ===========================
+   BUTTONS
+   =========================== */
+
+.edit-btn {
+  background-color: #facc15;
+  color: #fff;
+  padding: 6px 12px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.edit-btn:hover {
+  background-color: #eab308;
+}
+
+.delete-btn {
+  background-color: #ef4444;
+  color: #fff;
+  padding: 6px 12px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.delete-btn:hover {
+  background-color: #dc2626;
+}
+
+.btn-primary {
+  background-color: #2563eb;
+  color: white;
+}
+
+.btn-danger {
+  background-color: #dc2626;
+  color: white;
+}
+
+.btn-warning {
+  background-color: #d97706;
+  color: white;
+}
+
+.btn-outline {
+  background-color: white;
+  border: 1px solid #d1d5db;
+  color: #374151;
+}
+
+
+/* ===========================
+   PAGINATION
+   =========================== */
+
+.pagination {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin-top: 1.5rem;
+}
+
+.pagination button {
+  border: 1px solid #d1d5db;
+  background-color: white;
+  padding: 0.5rem 1rem;
+  border-radius: 0.5rem;
+}
+
+.pagination button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+
+/* ===========================
+   MODAL (Only 1 version kept!)
+   =========================== */
+
+.modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.55);
+  backdrop-filter: blur(3px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 999;
+  animation: fadeIn 0.3s ease-out;
+}
+
+.modal-content {
+  background: #ffffff;
+  border-radius: 16px;
+  padding: 24px;
+  width: 95%;
+  max-width: 600px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+  animation: slideUp 0.35s ease-out;
+}
+
+.modal-header {
+  text-align: center;
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+}
+
+.modal-body input,
+.modal-body textarea,
+.modal-body select,
+.modal-body input[type="file"] {
+  width: 100%;
+  padding: 10px 12px;
+  border: 1px solid #d1d5db;
+  border-radius: 8px;
+  margin-bottom: 10px;
+}
+
+.modal-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+}
+
+.btn-save {
+  background-color: #10b981;
+  color: white;
+}
+
+.btn-cancel {
+  background-color: #9ca3af;
+  color: white;
+}
+
+
+/* ===========================
+   ANIMATIONS
+   =========================== */
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes slideUp {
+  from { transform: translateY(40px); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
+}
+
+
+/* ===========================
+   REPORT PAGE
+   =========================== */
+
+.report-container {
+  max-width: 1200px;
+  margin: 2rem auto;
+  padding: 1rem;
+}
+
+.report-card {
+  border-radius: 16px;
+  background: #fff;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+  padding: 2rem;
+}
+
+.report-header {
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 2px solid #f1f1f1;
+  padding-bottom: 0.8rem;
+}
+
+.report-summary {
+  background: #f8f9fc;
+  border-radius: 12px;
+  padding: 1rem 1.5rem;
+  margin-bottom: 1.5rem;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+}
+
+.report-table table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.chart-card {
+  background: #fdfdfd;
+  border-radius: 12px;
+  padding: 1rem;
+}
+
+.report-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 0.75rem;
+}
+
+.report-message {
+  margin-top: 1rem;
+  text-align: center;
+  background-color: #ebf8ff;
+  color: #2b6cb0;
+  padding: 0.75rem;
+  border-radius: 8px;
+}
