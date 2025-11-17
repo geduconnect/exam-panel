@@ -1,0 +1,3 @@
+[submodule "exam-panel-main - 17-11-2025/exam-panel-main/admin"]
+	path = exam-panel-main - 17-11-2025/exam-panel-main/admin
+	url = https://github.com/geduconnect/exam-panel-admin.git
